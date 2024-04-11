@@ -11,17 +11,17 @@ class Food{
   }
   // メソッドを定義する
   function show_price(){
-  return $this->price;
+  echo $this->price;
   }
 }
 
 //インスタンス化する
 $potato = new Food('potato',250);
-$potato_price = $potato->show_price();
+
 
 print_r($potato);
 echo '<br>';
-// echo $potato_price;
+$potato_price;
 // echo '<br>';
 
 class Animal{
@@ -30,7 +30,7 @@ class Animal{
   private $weight;
 
   function show_height(){
-    return $this->height;
+    echo $this->height;
   }
   function __construct(string $name, int $height, int $weight){
     $this->name = $name;
@@ -40,13 +40,17 @@ class Animal{
 }
 
 $dog = new Animal('dog', 60, 5000);
-$dog_height = $dog->show_height();
+
 
 print_r($dog);
 echo '<br>';
 
-echo $potato_price;
+// 「Food」クラスには「price」プロパティの値を出力する「show_price」メソッドを、「Animal」クラスには「height」 プロパティの値を出力する
+// 「show_height」メソッドをそれぞれ作成
+// ⇨出力するメソッドなのでreturnを使用せずに実装をしましょう！
+
+$potato_price = $potato->show_price();
 echo '<br>';
 
-echo $dog_height;
+$dog_height = $dog->show_height();
 echo '<br>';
